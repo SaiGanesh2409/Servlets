@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    version="3.1">
+    
+    <!-- First Servlet Configuration -->
+    <servlet>
+        <servlet-name>First</servlet-name>
+        <servlet-class>com.servlet.FirstServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>First</servlet-name>
+        <url-pattern>/first</url-pattern>
+    </servlet-mapping>
+
+    <!-- Second Servlet Configuration -->
+    <servlet>
+        <servlet-name>Second</servlet-name>
+        <servlet-class>com.servlet.SecondSevlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Second</servlet-name>
+        <url-pattern>/second</url-pattern>
+    </servlet-mapping>
+
+    <!-- Third Servlet Configuration -->
+    <servlet>
+        <servlet-name>Third</servlet-name>
+        <servlet-class>com.servlet.ThirdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Third</servlet-name>
+        <url-pattern>/third</url-pattern>
+    </servlet-mapping>
+</web-app>
