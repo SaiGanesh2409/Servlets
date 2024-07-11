@@ -8,6 +8,17 @@
     <servlet>
         <servlet-name>Project</servlet-name>
         <servlet-class>com.servlet_project.RegisterUser</servlet-class>
+        
+        <init-param>
+        <param-name>Db-username</param-name>
+        <param-value>system</param-value>
+        </init-param>
+        
+        <init-param>
+        <param-name>Db-Password</param-name>
+        <param-value>Oracle_1</param-value>
+        </init-param>
+        
     </servlet>
     <servlet-mapping>
         <servlet-name>Project</servlet-name>

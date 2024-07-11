@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -24,10 +25,14 @@ public class RegisterUser extends HttpServlet {
         String userAddress = httpServletRequest.getParameter("address");
         String userPassword = httpServletRequest.getParameter("password");
 
+        ServletConfig config  = getServletConfig();
+        String dbUserName = config.getInitParameter("Db-username");
+        String dbPassword = config.getInitParameter("Db-Password");
+
         String driver = "oracle.jdbc.driver.OracleDriver";
         String url = "jdbc:oracle:thin:@localhost:1521:xstore";
-        String user = "system";
-        String password = "Oracle_1";
+        String user = dbUserName;
+        String password = dbPassword;
 
         Connection connection = null;
         PreparedStatement stmt = null;
