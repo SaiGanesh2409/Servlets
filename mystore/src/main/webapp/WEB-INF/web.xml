@@ -6,12 +6,12 @@
     version="3.1">
     
     <servlet>
-        <servlet-name>Product</servlet-name>
-        <servlet-class>com.mystore.Products</servlet-class>
+        <servlet-name>Project</servlet-name>
+        <servlet-class>com.servlet_project.RegisterUser</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Product</servlet-name>
-        <url-pattern>/submitProduct</url-pattern>
+        <servlet-name>Project</servlet-name>
+        <url-pattern>/userregform</url-pattern>
     </servlet-mapping>
 
 </web-app>
