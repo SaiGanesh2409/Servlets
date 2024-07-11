@@ -13,5 +13,14 @@
         <servlet-name>Project</servlet-name>
         <url-pattern>/userregform</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Project1</servlet-name>
+        <servlet-class>com.servlet_project.AuthenticatUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Project1</servlet-name>
+        <url-pattern>/authenticate</url-pattern>
+    </servlet-mapping>
 
 </web-app>

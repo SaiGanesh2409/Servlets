@@ -16,7 +16,8 @@ public class RegisterUser extends HttpServlet {
 
     public void service(HttpServletRequest httpServletRequest, 
             HttpServletResponse httpServletResponse) throws IOException {
-
+        httpServletResponse.setContentType("text/html");
+    	
         String userName = httpServletRequest.getParameter("name");
         String userContact = httpServletRequest.getParameter("contact");
         String userEmail = httpServletRequest.getParameter("email");
@@ -60,9 +61,7 @@ public class RegisterUser extends HttpServlet {
 
         PrintWriter pw = httpServletResponse.getWriter();
         pw.println("User Registered Successfully");
-        pw.println("Name: " + userName);
-        pw.println("Contact: " + userContact);
-        pw.println("Email: " + userEmail);
-        pw.println("Address: " + userAddress);
+        pw.println("<h1><a href = \"/servlet_project/Login.html\">Log in</a></h1>");
+
     }
 }
