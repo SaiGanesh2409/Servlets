@@ -30,7 +30,7 @@ public class AuthenticatUser extends HttpServlet {
 
         Connection connection = null;
         PreparedStatement stmt = null;
-        
+        PrintWriter pw = httpServletResponse.getWriter();
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(url, user, password);
@@ -40,14 +40,15 @@ public class AuthenticatUser extends HttpServlet {
             String qry = "Select * from Users where email=?";
             stmt = connection.prepareStatement(qry);
             stmt.setString(1, userEmail);
-            PrintWriter pw = httpServletResponse.getWriter();
+         
             ResultSet rs = stmt.executeQuery();
             
             if(rs.next()) {
             	String dbpwd = rs.getString("password");
             	
             	if(userPassword.equals(dbpwd)) {
-            		pw.println("<h1>Log in successfull</h1>"+rs.getString("name"));
+            		pw.println("<h1>Log in successful " + rs.getString("name") + "</h1>");
+
             	}else {
             		pw.println("<h1>Password is incorrect</h1>");
             	}
@@ -58,6 +59,7 @@ public class AuthenticatUser extends HttpServlet {
         }catch(Exception e) {
         	
         }
+
     }
 
 }
